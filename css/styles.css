@@ -1,22 +1,27 @@
 /* колір заголовків #212121 */
 /* колір вторинного тексту #757575 */
 /* колір акцентів #2196F3 */
+/* колір ховеру фокусу #188ce8 */
 /* колір основного фона #FFFFFF */
 /* колір вторинного фона #2F303A */
 /* колір акцентованого фону #F5F4FA */
+/* колір обводки #eeeeee */
 
 :root {
   --title-text-color: #212121;
   --paragraph-text-color: #757575;
+  --secondary-text-color: #ffffff;
   --accent-color: #2196f3;
+  --hover-focus-color: #188ce8;
   --background-main-color: #ffffff;
   --background-footer-color: #2f303a;
   --background-secondary-color: #f5f4fa;
+  --border-item-color: #eeeeee;
   --main-font: 'Roboto';
 }
 
 body {
-  background: #ffffff;
+  background: var(--background-main-color);
 
   color: var(--title-text-color);
   font-family: var(--main-font), sans-serif;
@@ -26,6 +31,9 @@ body {
 
 /* ---------------------- buttons ---------------------- */
 .button {
+  border-radius: 4px;
+  border: 0px;
+
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -36,29 +44,48 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
 
-  color: #ffffff;
+  color: var(--secondary-text-color);
   background-color: var(--accent-color);
-  border-color: rgba(0, 0, 0, 0);
 
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: #188ce8;
+  background-color: var(--hover-focus-color);
 }
 
 .button:focus {
-  background-color: #188ce8;
+  background-color: var(--hover-focus-color);
 }
 
-.button.secondary {
+.button-secondary {
+  border-radius: 4px;
+  border: 0px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+
+  text-align: center;
+
   color: var(--title-text-color);
   background-color: var(--background-secondary-color);
 }
 
+.button-secondary:hover {
+  color: var(--secondary-text-color);
+  background-color: var(--accent-color);
+}
+
+.button-secondary:focus {
+  color: var(--secondary-text-color);
+  background-color: var(--accent-color);
+}
+
 /* ----------------------- header ---------------------- */
 .header {
-  background: #ffffff;
+  background: var(--background-main-color);
 }
 .header-navigation {
 }
@@ -72,13 +99,14 @@ body {
   color: #000000;
 }
 .logo-web {
-  color: #2196f3;
+  color: var(--accent-color);
 }
 
 /* ------------------------------ navigation ---------------------------------- */
 .nav-list {
   list-style: none;
 }
+
 .nav-link {
   font-weight: 500;
   font-size: 14px;
@@ -94,6 +122,10 @@ body {
 }
 
 .nav-link:focus {
+  color: var(--accent-color);
+}
+
+.nav-link.active {
   color: var(--accent-color);
 }
 
@@ -127,7 +159,7 @@ body {
 
 /* --------------------------------- hero ------------------------------------- */
 .hero {
-  background-color: #2f303a;
+  background-color: var(--background-footer-color);
 }
 .hero-title {
   font-weight: 900;
@@ -138,9 +170,7 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  color: #ffffff;
-}
-.hero-button {
+  color: var(--secondary-text-color);
 }
 
 /* -------------------------------- benefits ---------------------------------- */
@@ -205,6 +235,9 @@ body {
   list-style: none;
 }
 .team-item {
+  width: 270px;
+  height: 368px;
+  background-color: var(--background-main-color);
 }
 .team-member {
   font-weight: 500;
@@ -231,7 +264,7 @@ body {
   line-height: 1.19;
   text-decoration: none;
 
-  color: #ffffff;
+  color: var(--secondary-text-color);
   text-decoration: none;
 }
 .address {
@@ -247,9 +280,15 @@ body {
   line-height: 1.71;
   font-style: normal;
 
-  color: #ffffff;
+  color: var(--secondary-text-color);
 
   text-decoration: none;
+}
+.map-link:hover {
+  color: var(--accent-color);
+}
+.map-link:focus {
+  color: var(--accent-color);
 }
 .address-link {
   font-size: 14px;
@@ -259,4 +298,38 @@ body {
   color: rgba(255, 255, 255, 0.6);
 
   text-decoration: none;
+}
+.address-link:hover {
+  color: var(--accent-color);
+}
+.address-link:focus {
+  color: var(--accent-color);
+}
+
+/* --------------------- portfolio second page -------------------- */
+.portfolio {
+}
+.filter-buttons {
+}
+.portfolio-list {
+  list-style: none;
+}
+.portfolio-item {
+  width: 370px;
+  height: 404px;
+  border: 1px solid var(--border-item-color);
+}
+.portfolio-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+
+  color: var(--title-text-color);
+}
+.portfolio-description {
+  font-size: 16px;
+  line-height: 1.88;
+
+  color: var(--paragraph-text-color);
 }
